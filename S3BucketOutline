@@ -5,13 +5,13 @@ pip install boto3
 import boto3
 from flask import Flask, request, render_template, session
 import os
-import uuid  # To generate unique identifiers for each user
+import uuid  #To generate unique identifiers for each user
 
 #AWS credentials and region (replace with your own)
-aws_access_key_id = 'YOUR_ACCESS_KEY'  # Replace with your AWS access key
-aws_secret_access_key = 'YOUR_SECRET_KEY'  # Replace with your AWS secret key
-aws_region = 'YOUR_REGION'  # Replace with your AWS region
-bucket_name = 'your-s3-bucket-name'  # Replace with your S3 bucket name
+aws_access_key_id = 'YOUR_ACCESS_KEY'  #Replace with your AWS access key
+aws_secret_access_key = 'YOUR_SECRET_KEY'  #Replace with your AWS secret key
+aws_region = 'YOUR_REGION'  #Replace with your AWS region
+bucket_name = 'your-s3-bucket-name'  #Replace with your S3 bucket name
 
 #Create an S3 client
 s3 = boto3.client('s3', aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key, region_name=aws_region)
@@ -20,7 +20,7 @@ s3 = boto3.client('s3', aws_access_key_id=aws_access_key_id, aws_secret_access_k
 app = Flask(__name__)
 
 #Set a secret key for session management (replace with a secure secret key)
-app.secret_key = 'your_secret_key'  # Replace with a secure secret key for Flask session management
+app.secret_key = 'your_secret_key'  #Replace with a secure secret key for Flask session management
 
 #Define the route for the main page
 @app.route('/', methods=['GET', 'POST'])
